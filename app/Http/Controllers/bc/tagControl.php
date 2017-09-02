@@ -4,6 +4,7 @@ namespace App\Http\Controllers\bc;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 
 class tagControl extends Controller
 {
@@ -14,8 +15,22 @@ class tagControl extends Controller
      */
     public function index()
     {
-        //
+        return view('bcon.tags');
     }
+
+    public function quickAddTag(Request $request)
+    {
+
+        $tagArr = explode(",",$request->tags);
+
+        for ($i=0; $i <count($tagArr) ; $i++) { 
+            Tag::create(['tag'=>$tagArr[$i]]);
+        }
+
+        return redirect()->back();
+        
+    }
+
 
     /**
      * Show the form for creating a new resource.

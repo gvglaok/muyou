@@ -30,6 +30,7 @@ Route::group(['namespace'=>'bc' ,'prefix' => 'bc'], function() {
     })->name('dashboard');
     
     Route::resource('artical', 'articalControl');
-
-    Route::view('classmenu','bcon.classMenu');
+    Route::resource('tags', 'tagControl');
+    Route::post('tags/quick_add', 'tagControl@quickAddTag')->name('qa_tag');
+    
 });
