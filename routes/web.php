@@ -21,16 +21,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['namespace'=>'bc' ,'prefix' => 'bc'], function() {
-    Route::get('tt', function() {
-        return view('layouts.bcon');
-    });
+    Route::get('tt', 'tagControl@nestableJson');
 
     Route::get('dashboard', function() {
         return view('bcon.dashboard');
     })->name('dashboard');
     
     Route::resource('artical', 'articalControl');
-    Route::resource('tags', 'tagControl');
+    
     Route::post('tags/quick_add', 'tagControl@quickAddTag')->name('qa_tag');
+    
+    Route::resource('tags', 'tagControl');
     
 });
