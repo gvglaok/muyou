@@ -47,8 +47,8 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 
-				<form action="" method="POST" class="form-horizontal" role="form">
-					{{ csrf_field() }} {{ method_field('PUT') }}
+				<form action="{{ route('artical.store') }}" method="POST" class="form-horizontal" role="form">
+					{{ csrf_field() }}
 					<div class="form-group">
 						<label for="input" class="col-sm-1 control-label">标题</label>
 						<div class="col-sm-9">

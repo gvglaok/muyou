@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['namespace'=>'bc' ,'prefix' => 'bc'], function() {
+Route::group(['namespace'=>'bc' ,'prefix' => 'bc','middleware'=>'auth'], function() {
     Route::get('tt', 'tagControl@nestableJson');
 
     Route::get('dashboard', function() {

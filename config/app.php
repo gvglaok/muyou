@@ -179,7 +179,7 @@ return [
 
         'Lavary\Menu\ServiceProvider',
         Zizaco\Entrust\EntrustServiceProvider::class,
-
+        'Yangqi\Htmldom\HtmldomServiceProvider',
     ],
 
     /*
@@ -231,7 +231,8 @@ return [
 
         'Menu' => 'Lavary\Menu\Facade',
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-
+        'Htmldom' => 'Yangqi\Htmldom\Htmldom',
+        
     ],
 
 ];

@@ -1,7 +1,6 @@
 @extends('layouts.bcon')
 
 @section('content')
-	{{}}
 	<div class="row">
 		<div class="col-xs-12 col-md-3">
 			访问数 ：999
@@ -22,12 +21,13 @@
 	<div class="form-group">
 		<label for="textarea" class="col-sm-2 control-label">:</label>
 		<div class="col-sm-10">
-			<textarea name="" id="textarea" class="form-control" rows="3" required="required">
+			<textarea name="" id="textarea" class="form-control" rows="9" required="required">
 				
 			- 游戏新闻
 			- 出游建议
 
 			- 队友招募
+			- 组队交流
 			- 招募打赏
 			- 奖金
 			- 平台聊天留言
