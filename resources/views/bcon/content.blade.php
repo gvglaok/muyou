@@ -27,7 +27,7 @@
 					<button type="submit" class="btn btn-default">搜索</button>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"> 分类 3</a></li>
+					
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">二级分类 <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -37,6 +37,9 @@
 							<li><a href="#">Separated link</a></li>
 						</ul>
 					</li>
+
+					<li><a href="{{route('artical.create')}}"> <i class="fa fa-plus"></i>添加文章 </a></li>
+
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>

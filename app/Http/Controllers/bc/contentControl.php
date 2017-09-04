@@ -4,8 +4,9 @@ namespace App\Http\Controllers\bc;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Content;
 
-class articalControl extends Controller
+class contentControl extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class articalControl extends Controller
      */
     public function index()
     {
-        return view('bcon.articals');
+        return view('bcon.content');
     }
 
     /**
@@ -24,7 +25,7 @@ class articalControl extends Controller
      */
     public function create()
     {
-        //
+        return view('bcon.contentAdd');
     }
 
     /**

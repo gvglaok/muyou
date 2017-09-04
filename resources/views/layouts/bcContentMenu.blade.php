@@ -87,33 +87,7 @@
 											</span>
 										</a>
 									</li>
-									
-									<li class="active">
-										<a href="#">
-											<span class="line">
-												<strong>Salma Nyberg</strong>
-												<span class="light small">- 2 days ago</span>
-											</span>
-											
-											<span class="line desc small">
-												Oh he decisively impression attachment friendship so if everything. 
-											</span>
-										</a>
-									</li>
-									
-									<li>
-										<a href="#">
-											<span class="line">
-												Hayden Cartwright
-												<span class="light small">- a week ago</span>
-											</span>
-											
-											<span class="line desc small">
-												Whose her enjoy chief new young. Felicity if ye required likewise so doubtful.
-											</span>
-										</a>
-									</li>
-									
+								
 									<li>
 										<a href="#">
 											<span class="line">
@@ -170,47 +144,6 @@
 										</a>
 									</li>
 									
-									<li class="active notification-secondary">
-										<a href="#">
-											<i class="fa-lock"></i>
-											
-											<span class="line">
-												<strong>Privacy settings have been changed</strong>
-											</span>
-											
-											<span class="line small time">
-												3 hours ago
-											</span>
-										</a>
-									</li>
-									
-									<li class="notification-primary">
-										<a href="#">
-											<i class="fa-thumbs-up"></i>
-											
-											<span class="line">
-												<strong>Someone special liked this</strong>
-											</span>
-											
-											<span class="line small time">
-												2 minutes ago
-											</span>
-										</a>
-									</li>
-									
-									<li class="notification-danger">
-										<a href="#">
-											<i class="fa-calendar"></i>
-											
-											<span class="line">
-												John cancelled the event
-											</span>
-											
-											<span class="line small time">
-												9 hours ago
-											</span>
-										</a>
-									</li>
 									
 									<li class="notification-info">
 										<a href="#">
@@ -270,10 +203,15 @@
 					</li>
 					
 					<li class="dropdown user-profile">
+						<!-- Authentication Links -->
+                        @guest
+                            <li><a href="{{ route('login') }}">登陆</a></li>
+                            <li><a href="{{ route('register') }}">注册</a></li>
+						@else
 						<a href="#" data-toggle="dropdown">
 							<img src="/bcon/assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 							<span>
-								Arlind Nushi
+								{{ Auth::user()->name }}
 								<i class="fa-angle-down"></i>
 							</span>
 						</a>
@@ -282,34 +220,40 @@
 							<li>
 								<a href="#edit-profile">
 									<i class="fa-edit"></i>
-									New Post
+									发布新内容
 								</a>
 							</li>
 							<li>
 								<a href="#settings">
 									<i class="fa-wrench"></i>
-									Settings
+									设置
 								</a>
 							</li>
 							<li>
 								<a href="#profile">
 									<i class="fa-user"></i>
-									Profile
+									个人信息
 								</a>
 							</li>
 							<li>
 								<a href="#help">
 									<i class="fa-info"></i>
-									Help
+									帮助
 								</a>
 							</li>
 							<li class="last">
-								<a href="extra-lockscreen.html">
-									<i class="fa-lock"></i>
-									Logout
-								</a>
+								<a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    退出
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
 							</li>
 						</ul>
+						@endguest
 					</li>
 					
 					<li>

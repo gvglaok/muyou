@@ -15,7 +15,7 @@ class tagControl extends Controller
      */
     public function index()
     {
-        $tags = Tag::select("tag","id")->where("parentId",0)->get();
+        $tags = Tag::select("tag","id")->orderBy('click')->get();
         return view('bcon.tags',['tags'=>$tags]);
     }
 

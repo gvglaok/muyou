@@ -27,7 +27,7 @@ Route::group(['namespace'=>'bc' ,'prefix' => 'bc'], function() {
         return view('bcon.dashboard');
     })->name('dashboard');
     
-    Route::resource('artical', 'articalControl');
+    Route::resource('artical', 'contentControl');
     
     Route::post('tags/quick_add', 'tagControl@quickAddTag')->name('qa_tag');
     

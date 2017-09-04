@@ -10,7 +10,7 @@
 				<a href="#first" aria-controls="first" role="tab" data-toggle="tab">Tag管理</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Tag层级管理</a>
+				<a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Tag</a>
 			</li>
 		</ul>
 	
@@ -35,7 +35,7 @@
 				
 				<div class="panel panel-flat">
 					  <div class="panel-heading">
-							<h3 class="panel-title">未分类标签:</h3>
+							<h3 class="panel-title">所有标签:</h3>
 					  </div>
 					  <div class="panel-body">
 					  	
@@ -64,39 +64,10 @@
 		</div>
 	</div>
 	
-	<div class="dd">
-	    <ol class="dd-list">
-	        <li class="dd-item" data-id="1">
-	            <div class="dd-handle">Item 1	
-	            	<span class="pull-right"> 
-	            		<a href="1"><i class="fa fa-edit"></i>修改</a> 
-	            		<a href="2"><i class="fa fa-trash"></i>删除</a> 
-	            	</span>
-	            </div>
-	        </li>
-	        <li class="dd-item" data-id="2">
-	            <div class="dd-handle">Item 2</div>
-	        </li>
-	        <li class="dd-item" data-id="3">
-	            <div class="dd-handle">Item 3</div>
-	            <ol class="dd-list">
-	                <li class="dd-item" data-id="4">
-	                    <div class="dd-handle">Item 4</div>
-	                </li>
-	                <li class="dd-item" data-id="5" data-foo="bar">
-	                    <div class="dd-nodrag">Item 5</div>
-	                </li>
-	            </ol>
-	        </li>
-	    </ol>
-	</div>
+
 	<div class="dd" id="nestable-json"></div>
 
-        <script>
-        
-        </script>
 
-	
 @endsection
 
 @section('importCSS')
@@ -158,9 +129,11 @@
 <script type="text/javascript">
 	$(function() {
 		//$('.dd').nestable({ /* config options */ });
+		//tag josn 序列化
 		var json = '[{"id":1,"content":"11bar"},{"id":2,"content":"bar22"},{"id":3,"content":"bar333","children":[{"id":4},{"id":5,"content":"bar"}]}]';
         var options = {'json': json}
-        $('#nestable-json').nestable(options);
+        //$('#nestable-json').nestable(options);
+
 		// tag updata
 		$("[id^='tagBtn']").click(function(){
 			var tid = $(this).attr("tid");

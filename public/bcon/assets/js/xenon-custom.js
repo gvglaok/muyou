@@ -1002,6 +1002,7 @@ var public_vars = public_vars || {};
 					stylesheets: stylesheets.split(','),
 					"html": attrDefault($this, 'html', true),
 					"color": attrDefault($this, 'colors', true),
+					local:'zh-CN',
 				});
 			});
 		}
