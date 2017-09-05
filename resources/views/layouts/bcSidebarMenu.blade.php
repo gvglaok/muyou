@@ -83,7 +83,7 @@
 					<li>
 						<a href="layout-variants.html">
 							<i class="linecons-desktop"></i>
-							<span class="title">文章管理</span>
+							<span class="title">内容管理</span>
 						</a>
 						<ul>
 							<li>
@@ -116,7 +116,7 @@
 						<ul>
 							<li>
 								<a href="">
-									<span class="title">队列管理</span>
+									<span class="title">活动组队</span>
 								</a>
 							</li>
 							<li>
