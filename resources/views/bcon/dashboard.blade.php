@@ -21,16 +21,9 @@
 	<div class="form-group">
 		<label for="textarea" class="col-sm-2 control-label">:</label>
 		<div class="col-sm-10">
-			<textarea name="" id="textarea" class="form-control" rows="9" required="required">
+			<textarea name="" id="textarea" class="form-control" rows="20" required="required">
 				
-			- 游戏新闻
-			- 出游建议
 
-			- 队友招募
-			- 组队交流
-			- 招募打赏
-			- 奖金
-			- 平台聊天留言
 
 			</textarea>
 		</div>
