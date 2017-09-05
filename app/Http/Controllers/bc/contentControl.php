@@ -12,6 +12,7 @@ use Htmldom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Content;
+use Illuminate\Support\Facades\File;
 
 
 class contentControl extends Controller
@@ -50,25 +51,45 @@ class contentControl extends Controller
                 'info'=>'max:255',
                 'content'=>'required',
             ]);
-        $shd = new \Htmldom;
-        $html = $shd->str_get_html($request->content);
-
-        $img=Image::make("http://ww2.sinaimg.cn/large/0060lm7Tly1fj7ywm4i7xj305k05kwet.jpg")->blur(15);
-        Storage::put("public/".time().".jpg", $img);
+        $hd = new \Htmldom;
+        $html = $hd->str_get_html($request->content);
 
         foreach ($html->find('img') as $value) {
-            echo($value->src."<br>");
-            
-        }
+            $src = $value ->src;
 
+            $http_status = parse_url($src,0);
+
+            $img_info = getimagesize($src);
+           
+            if($img_info)
+            {
+                $mime = $img_info['mime'];
+                $type = @end(explode("/",$imgurl));
+            }
+
+            $path = "storage/cimg/".time().".".$type;
+
+            if($http_status!="https"&&$img_info)
+            {
+                $path = "storage/cimg/".time().".jpg";
+            
+                $img=Image::make($value->src);
+            
+                $img->save("storage/cimg/".time().".jpg",90);
+
+                $value ->src = $path;
+            }
+            
+
+        }
 
         $content = new Content;
         $content -> authorID = Auth::id();
         $content -> title = $request -> title;
         $content -> tags = $request -> tags;
         $content -> info = $request -> info;
-        $content -> content = $request -> content;
-        //$content -> save();
+        $content -> content = $html;
+        $content -> save();
 
         //return redirect()->back()->withErrors($validator)->withInput();
     }
