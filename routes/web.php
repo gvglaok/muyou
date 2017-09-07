@@ -32,5 +32,8 @@ Route::group(['namespace'=>'bc' ,'prefix' => 'bc','middleware'=>'auth'], functio
     Route::post('tags/quick_add', 'tagControl@quickAddTag')->name('qa_tag');
     
     Route::resource('tags', 'tagControl');
+
+    Route::get('users','UserControl@UserList');
+    Route::post('users/add', 'UserControl@UserAdd')->name('user.add');
     
 });
