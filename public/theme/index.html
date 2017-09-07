@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MuYou</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/app.css" rel="stylesheet">
+    <!-- <link href="https://bootswatch.com/cyborg/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="cus.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <canvas id="bc" style="z-index:-1;position: fixed;"></canvas>
+    <nav class="navbar navbar-default " role="navigation">
+        <a class="navbar-brand" href="#"> 沐游😀🎵  </a>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">首页 </a>
+            </li>
+            <li>
+                <a href="#">刀友Dota</a>
+            </li>
+            <li>
+                <a href="#">撸友LOL</a>
+            </li>
+            <li>
+                <a href="#">鸡友DPK WG</a>
+            </li>
+            <li>
+                <a href="#">沐游福利</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MyName <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">我的基地</a></li>
+                    <li><a href="#">游戏战队</a></li>
+                    <li><a href="#">好友</a></li>
+                    <li><a href="#">未读消息 <i class="text-info"> 8 </i>   </a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">退出</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left 组队玩家-->
+            <div class="col-xs-6 col-lg-3">
+
+                <div class="row box">
+                    <div class="item col-xs-12 col-sm-12 col-lg-10">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                Theme Name <small>99</small>
+                            </li>
+                            <li class="list-group-item list-group-item-danger">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" src="1.jpeg"width="45px">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Name</h4>
+                                        <p>
+                                            <span class="label label-success">LOL</span>
+                                            <span class="label label-success">使命召唤</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object"  src="1.jpeg"width="45px">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                        <img class="media-object"  src="1.jpeg"width="45px">
+                                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+
+                                <button type="button" class="btn btn-large btn-block btn-primary">
+                                <i class="fa fa-plus-circle"></i> 加入
+                            </button>
+
+                            </li>
+
+                        </ul>
+
+
+
+                    </div>
+                    <div class="item col-xs-12 col-sm-12 col-lg-10">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-warning">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                    <img class="media-object" src="1.jpeg"width="45px">
+                                                </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                        <img class="media-object"  src="1.jpeg"width="45px">
+                                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                            <img class="media-object"  src="1.jpeg"width="45px">
+                                                        </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item col-xs-12 col-sm-12 col-lg-10">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-danger">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                    <img class="media-object" src="1.jpeg"width="45px">
+                                                </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                        <img class="media-object"  src="1.jpeg"width="45px">
+                                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                            <img class="media-object"  src="1.jpeg"width="45px">
+                                                        </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item col-xs-12 col-sm-12 col-lg-10">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-danger">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                    <img class="media-object" src="1.jpeg"width="45px">
+                                                </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                        <img class="media-object"  src="1.jpeg"width="45px">
+                                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                            <img class="media-object"  src="1.jpeg"width="45px">
+                                                        </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item col-xs-12 col-sm-12 col-lg-10">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-warning">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                    <img class="media-object" src="1.jpeg"width="45px">
+                                                </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                        <img class="media-object"  src="1.jpeg"width="45px">
+                                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                                            <img class="media-object"  src="1.jpeg"width="45px">
+                                                        </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Media heading</h4>
+                                        <p>Text goes here...</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- cente -->
+            <div class="col-xs-6 col-lg-6">
+
+
+                <div class="row box">
+                    <div class="item col-xs-12 col-lg-4">
+                        <div class="thumbnail">
+                            <img src="2.jpeg" alt="">
+                            <div class="caption">
+                                <h3>我的Name</h3>
+                                <p>
+                                    我关注的游戏：
+
+                                    <span class="label label-info">LOL</span>
+                                    <span class="label label-info">Dota2</span>
+                                    <span class="label label-info">CS:GO</span>
+                                    <span class="label label-info">暗黑破坏神3</span>
+
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fa fa-plus-circle"></i>
+                                        加好友
+                                    </a>
+                                    <a href="#" class="btn btn-default">
+                                        <i class="fa fa-group"></i>
+                                        组队</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-4">
+                        <div class="thumbnail">
+                            <img src="2.jpeg" alt="">
+                            <div class="caption">
+                                <h3>Title</h3>
+                                <p>
+                                    ...
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">加他</a>
+                                    <a href="#" class="btn btn-default">组队</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-4">
+                        <div class="thumbnail">
+                            <img src="1.jpeg" alt="">
+                            <div class="caption">
+                                <h3>Title</h3>
+                                <p>
+                                    ...
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">加他</a>
+                                    <a href="#" class="btn btn-default">组队</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-4">
+                        <div class="thumbnail">
+                            <img src="2.jpeg" alt="">
+                            <div class="caption">
+                                <h3>Title</h3>
+                                <p>
+                                    ...
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">加他</a>
+                                    <a href="#" class="btn btn-default">组队</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-4">
+                        <div class="thumbnail">
+                            <img src="1.jpeg" alt="">
+                            <div class="caption">
+                                <h3>Title</h3>
+                                <p>
+                                    ...
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">加他</a>
+                                    <a href="#" class="btn btn-default">组队</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- right -->
+            <div class="col-xs-12  col-lg-3">
+
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info ">
+                        》》》战队赛 天梯榜 《《《
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-wpbeginner fa-5x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">😎 LGD
+                                    <span class="badge">胜：99</span>
+                                </h4>
+                                <p> 😎 不服来战！
+                                    <span class="label label-success">LOL 胜：66</span>
+                                    <span class="label label-success">Dota 胜：33</span>
+                                </p>
+
+                                <button type="button" class="btn btn-large btn-block btn-primary">
+                                   <i class="fa fa-space-shuttle"></i> 挑战
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                    <i class="fa fa-gg fa-5x"></i>
+                                </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">撒娇的发好歌
+                                    <span class="badge">胜：89</span>
+                                </h4>
+                                <p> 😎 不服来战！
+                                    <span class="label label-success">LOL 胜：66</span>
+                                    <span class="label label-success">Dota 胜：23</span>
+                                </p>
+
+                                <button type="button" class="btn btn-large btn-block btn-primary">
+                                       <i class="fa fa-space-shuttle"></i> 挑战
+                                    </button>
+
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="../js/app.js"></script>
+    <script src="masonry.min.js"></script>
+
+    <script>
+        $(function () {
+            bgRander();
+            $('.box').masonry({
+                itemSelector: '.item',
+            });
+        });
+        function bgRander() {
+
+            var c = document.getElementById('bc'),
+                $ = c.getContext('2d'),
+                w = c.width = window.innerWidth,
+                h = c.height = window.innerHeight;
+
+            var i, bubblesNumber = w * h > 750000 ? 200 : 150,
+                objects = [],
+                maxRadius = w * h > 500000 ? 50 : 35,
+                maxYVelocity = 2;
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function insertElementsAtIndex(index, arrayTo, arrayFrom, removeCount) {
+                var removed = false;
+                for (var i = arrayFrom.length - 1; i >= 0; i--) {
+                    if (removeCount && !removed) {
+                        arrayTo.splice(index, removeCount, arrayFrom[i]);
+                        removed = true;
+                        continue;
+                    }
+                    arrayTo.splice(index, 0, arrayFrom[i]);
+                }
+            }
+
+            function Vector(x, y) {
+                this.x = x || 0;
+                this.y = y || 0;
+            }
+
+            Vector.prototype.add = function (v) {
+                this.x += v.x;
+                this.y += v.y;
+                return this;
+            };
+
+            Vector.prototype.multiply = function (value) {
+                this.x *= value;
+                this.y *= value;
+                return this;
+            };
+
+            Vector.prototype.getMagnitude = function () {
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            };
+
+            function Fragment(position, velocity, radius, hue) {
+                this.position = position;
+                this.velocity = velocity;
+                this.startSpeed = this.velocity.getMagnitude();
+                this.radius = radius;
+                this.hue = hue;
+            }
+
+            Fragment.prototype.update = function (world) {
+                this.velocity.multiply(world.physicalProperties.friction);
+                this.position.add(this.velocity);
+                this.radius *= this.velocity.getMagnitude() / this.startSpeed;
+                if (this.radius < 0.1) {
+                    world.objects.splice(world.objects.indexOf(this), 1);
+                }
+            }
+
+            Fragment.prototype.render = function ($) {
+                $.beginPath();
+                $.fillStyle = 'hsl(' + this.hue + ', 100%, 50%)';
+                $.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+                $.fill();
+            };
+
+            function Bubble(x, y, speed, radius, fragments, swing, hue) {
+                this.x = x;
+                this.y = y;
+                this.startX = this.x;
+                this.speed = speed;
+                this.radius = radius;
+                this.fragments = fragments;
+                this.swing = swing;
+                this.hue = hue;
+            }
+
+            Bubble.prototype.update = function (world) {
+                this.x = this.startX + Math.cos(this.y / 80) * this.swing;
+                this.y += this.speed;
+                if (this.y + this.radius < 0) {
+                    this.y = world.physicalProperties.height + this.radius;
+                }
+            }
+
+            Bubble.prototype.render = function ($) {
+                $.beginPath();
+                $.fillStyle = 'hsl(' + this.hue + ', 100%, 50%)';
+                $.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                $.fill();
+            };
+
+            Bubble.prototype.pop = function (world) {
+                var arr = [];
+                for (var i = 0; i < this.fragments; i++) {
+                    arr.push(new Fragment(new Vector(this.x, this.y), new Vector(randomInRange(-2, 2), randomInRange(-2, 2)), randomInRange(2, this.radius / 4), this.hue));
+                }
+                insertElementsAtIndex(world.objects.indexOf(this), world.objects, arr, 1);
+            };
+
+            function World(physicalProperties, objects, ctx, background) {
+                this.physicalProperties = physicalProperties;
+                this.objects = objects;
+                this.ctx = ctx;
+                this.background = background;
+                this.frameID = 0;
+            }
+
+            World.prototype.update = function () {
+                for (var i = 0; i < this.objects.length; i++) {
+                    this.objects[i].update(this);
+                }
+            };
+
+            World.prototype.render = function () {
+                this.ctx.clearRect(0, 0, this.physicalProperties.width, this.physicalProperties.height);
+                if (this.background) {
+                    this.ctx.fillStyle = this.background;
+                    this.ctx.fillRect(0, 0, this.physicalProperties.width, this.physicalProperties.height);
+                }
+                for (var i = 0; i < this.objects.length; i++) {
+                    this.objects[i].render(this.ctx);
+                }
+            };
+
+            World.prototype.animate = function () {
+                this.update();
+                this.render();
+                this.frameID = requestAnimationFrame(this.animate.bind(this));
+            };
+
+            for (i = 0; i < bubblesNumber; i++) {
+                objects.push(new Bubble(Math.random() * w, Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+            }
+
+            var world = new World({
+                width: c.width,
+                height: c.height,
+                friction: 0.997
+            }, objects, $, 'rgb(51, 51, 51)');
+
+            $.globalCompositeOperation = 'lighter';
+
+            world.animate();
+
+            window.addEventListener('resize', function () {
+                w = world.physicalProperties.width = c.width = window.innerWidth;
+                h = world.physicalProperties.height = c.height = window.innerHeight;
+                $.globalCompositeOperation = 'lighter';
+            });
+
+            window.addEventListener('mousemove', function (e) {
+                for (var i = 0; i < world.objects.length; i++) {
+                    if ((world.objects[i] instanceof Bubble) && (e.clientX > world.objects[i].x - world.objects[i].radius && e.clientX < world.objects[i].x + world.objects[i].radius && e.clientY < world.objects[i].y + world.objects[i].radius && e.clientY > world.objects[i].y - world.objects[i].radius)) {
+                        world.objects[i].pop(world);
+                    }
+                }
+            });
+
+            window.addEventListener('touchmove', function (e) {
+                for (var i = 0; i < world.objects.length; i++) {
+                    if ((world.objects[i] instanceof Bubble) && (e.touches[0].clientX > world.objects[i].x - world.objects[i].radius && e.touches[0].clientX < world.objects[i].x + world.objects[i].radius && e.touches[0].clientY < world.objects[i].y + world.objects[i].radius && e.touches[0].clientY > world.objects[i].y - world.objects[i].radius)) {
+                        world.objects[i].pop(world);
+                    }
+                }
+            });
+
+        };
+    </script>
+</body>
+
+</html>

@@ -28,7 +28,7 @@
 	</div>
 	
 	@yield('importCSS')
-	@include('layouts.bcJS')
+	@include('layouts.bcJs')
 	@yield('importJS')
 	<!-- JavaScripts initializations and stuff -->
 	<script src="/bcon/assets/js/xenon-custom.js"></script>
