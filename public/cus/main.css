@@ -47,3 +47,29 @@
 .list-group-item {
     border: 1px solid #e05c65e6;
 }
+.k_ibox{
+    display: inline-block;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #5BC4FF;
+    border-color: #9ed9fb;
+}
+.btn-info {
+    color: #fff;
+    background-color: #0071b6;
+    border-color: #1f6a99;
+}
+
+.label-info {
+    background-color: #31affc;
+}
+.label-primary {
+    background-color: #3F34F5;
+}
+.label-warning {
+    background-color: #ff7721;
+}
+.label-danger {
+    background-color: #fe2424;
+}

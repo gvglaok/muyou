@@ -59,8 +59,8 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
-									<span class="title">会员管理（等级 积分 消息 状态）</span>
+								<a href="{{route('user')}}">
+									<span class="title">会员管理</span>
 								</a>
 							</li>
 							<li>

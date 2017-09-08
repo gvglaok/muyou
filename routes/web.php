@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('cus.index');
 });
 
 Auth::routes();
@@ -33,7 +33,12 @@ Route::group(['namespace'=>'bc' ,'prefix' => 'bc','middleware'=>'auth'], functio
     
     Route::resource('tags', 'tagControl');
 
-    Route::get('users','UserControl@UserList');
-    Route::post('users/add', 'UserControl@UserAdd')->name('user.add');
+    Route::get('users','UserControl@UserList')->name('user');
+    Route::post('users/add', 'UserControl@regist')->name('user.add');
+    Route::get('user/edit/{id}','UserControl@userEdit')->name('user.edit');
+    Route::post('user/update','UserControl@update')->name('user.update');
+    Route::get('user/delete/{id}','UserControl@delete')->name('user.delete');
+    
+
     
 });
