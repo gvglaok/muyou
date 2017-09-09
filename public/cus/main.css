@@ -2,6 +2,18 @@
     background-color: #cb3e3e66;
     border-color: #e05c65e6;
 }
+.nav .navbar-nav{
+    background-color: #cb3e3e66;
+    border-color: #e05c65e6;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e46f6b;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    /* background-color: #e94c4cb3; */
+}
+
 .navbar {
     border-radius: 0;
 }
@@ -72,4 +84,16 @@
 }
 .label-danger {
     background-color: #fe2424;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #ff8e8e4d;
+}
+.navbar-default .navbar-toggle {
+    border-color: #ff7b7b;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #f5b7b7;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e46f6b;
 }

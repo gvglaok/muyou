@@ -212,8 +212,6 @@
             </div>
             <!-- cente -->
             <div class="col-xs-6 col-lg-5">
-
-
                 <div class="row box">
                     <div class="item col-xs-12 col-lg-4">
                         <div class="thumbnail">
