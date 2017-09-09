@@ -9,13 +9,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-         <a class="navbar-brand" href="#"> 沐游😀🎵  </a>
+         <a class="navbar-brand" href="/"> 沐游😀🎵  </a>
         </div>
 
         <div class="collapse navbar-collapse" id="navList">
         <ul class="nav navbar-nav">
             <li class="active">
-                <a href="#">首页 </a>
+                <a href="/">首页 </a>
             </li>
             <li>
                 <a href="#">刀友Dota</a>
@@ -31,19 +31,24 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">登录</a></li>
-            <li><a href="#">注册</a></li>
+            @guest
+            <li><a href="/login">登录</a></li>
+            <li><a href="/regist">注册</a></li>
+            @else
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MyName <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" 
+                data-toggle="dropdown" role="button" aria-haspopup="true" 
+                aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">我的基地</a></li>
                     <li><a href="#">游戏战队</a></li>
                     <li><a href="#">好友</a></li>
                     <li><a href="#">未读消息 <i class="text-info"> 8 </i>   </a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">退出</a></li>
+                    {{--  <li role="separator" class="divider"></li>
+                    <li><a href="#">退出</a></li>  --}}
                 </ul>
             </li>
+            @endguest
         </ul>
         <div class="clearfix"></div>
         </div><!-- /.navbar-collapse -->

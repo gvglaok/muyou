@@ -9,9 +9,30 @@ use App\Models\UserInfo;
 use Validator;
 use Image;
 use Storage;
+use Auth;
+use Hash;
 
 class UserControl extends Controller
 {
+    public function login(Request $request)
+    {
+        $vali = Validator::make($request->all(),[
+            'email' => 'required|string|email|max:100',
+            'pwd' => 'required|string|min:6',
+        ]);
+
+        $em = $request->email;
+        $pwd = $request->pwd;
+        
+        if(Auth::attempt(['email' => $em, 'password' => $pwd]))
+        {
+            return redirect('/');
+        } else {
+            return redirect()->back()->withErrors($vali)->withInput();
+        }
+        
+
+    }
     public function UserList()
     {
         $users = User::paginate(15);
@@ -21,8 +42,8 @@ class UserControl extends Controller
     public function regist(Request $request)
     {
         $vali = Validator::make($request->all(),[
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name' => 'required|string|max:50',
+            'email' => 'required|string|email|max:100|unique:users',
             'pwd' => 'required|string|min:6|confirmed',
             'myimg' => 'image'
         ]);
@@ -33,15 +54,15 @@ class UserControl extends Controller
         $user-> password = bcrypt($request->pwd);
         $user->save();
         
-        $path = $request->file('myimg')->store('userCover','public');    
-        $userInfo = new UserInfo;
-        $userInfo-> user_id = $user->id;
-        $userInfo-> cover_img = $path;
-        
-        $userInfo-> save();   
-        
-        
-        return redirect()->back()->withErrors($vali)->withInput();
+        if(isset($request->myimg))
+        {
+            $path = $request->file('myimg')->store('userCover','public');    
+            $userInfo = new UserInfo;
+            $userInfo-> user_id = $user->id;
+            $userInfo-> cover_img = $path;
+            $userInfo-> save();   
+        }
+        return redirect()->back('/')->withErrors($vali)->withInput();
     }
 
     public function userEdit($id=0)
@@ -62,21 +83,33 @@ class UserControl extends Controller
         $uid = $request->uid;
         
         $user = User::find($uid);
-        $path = $request->file('myimg')->store('userCover','public');
+
+        if(isset($request->myimg))
+        {
+            $path = $request->file('myimg')->store('userCover','public');
+        } else {
+            $path = NULL;
+        }
 
         $user-> name = $request->name;
         $user-> email = $request->email;
-        $user-> password = bcrypt($request->pwd);
+
+        if(isset($request->pwd))
+        {
+            $user-> password = bcrypt($request->pwd);
+        }
         
-        if($user->userinfo)
+        if($user->userinfo && isset($path))
         {
             $user->userinfo->cover_img = $path;
             $user->save();
-        } else {
+        } else if(isset($path)) {
             $userinfo = new UserInfo;
             $userinfo -> user_id = $uid;
             $userinfo -> cover_img = $path;
             $userinfo -> save();
+            $user->save();
+        } else {
             $user->save();
         }
         return redirect()->back();

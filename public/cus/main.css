@@ -7,11 +7,11 @@
     border-color: #e05c65e6;
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e46f6b;
+      /*border-color: #e46f6b;
     position: absolute;
     width: 100%;
     z-index: 2;
-    /* background-color: #e94c4cb3; */
+   background-color: #e94c4cb3; */
 }
 
 .navbar {
@@ -96,4 +96,27 @@
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #e46f6b;
+}
+
+.reg_box{
+    background-color: rgba(243, 47, 47, 0.7);
+    color: #fff;
+    box-shadow: 0px 0px 60px rgba(203, 0, 0, 0.7);
+    overflow-x: hidden;
+    padding: 0 8px;
+}
+.reg_box br{
+    height:15px;
+}
+.reg_box legend{
+    color: #fff;
+    border-bottom: 1px solid #fe2424;
+}
+.control-lable{
+    text-align: right;
+    line-height: 36px;
+    font-weight: bold;
+}
+@media (max-width:800px) {
+
 }
