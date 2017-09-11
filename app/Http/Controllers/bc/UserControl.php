@@ -36,7 +36,7 @@ class UserControl extends Controller
     public function UserList()
     {
         $users = User::paginate(15);
-        return view('bcon.URP',['users'=>$users]);
+        return view('bcon.users',['users'=>$users]);
     }
     
     public function regist(Request $request)

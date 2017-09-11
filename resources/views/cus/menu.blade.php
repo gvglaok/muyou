@@ -32,7 +32,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             @guest
-            <li><a href="/login">登录</a></li>
+            <li><a href="/log">登录</a></li>
             <li><a href="/regist">注册</a></li>
             @else
             <li class="dropdown">

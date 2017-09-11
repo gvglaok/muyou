@@ -4,12 +4,12 @@
 
     <script>
         $(function () {
-            bgRander();
+            //bgRender();
             $('.box').masonry({
                 itemSelector: '.item',
             });
         });
-        function bgRander() {
+        function bgRender() {
 
             var c = document.getElementById('bc'),
                 $ = c.getContext('2d'),

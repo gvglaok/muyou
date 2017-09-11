@@ -29,8 +29,8 @@
                     <div class="col-sm-10">
                         <input type="file" name="myimg" accept="image/gif,image/jpeg,image/jpg,image/png" class="form-control" value="">
                     </div>
-                </div>
-                <div class="form-group">
+                </div>修改密码
+                {{--  <div class="form-group">
                     <label for="input" class="col-sm-2 control-label">密码</label>
                     <div class="col-sm-10">
                         <input type="password" name="pws" class="form-control" value="">
@@ -41,7 +41,7 @@
                     <div class="col-sm-10">
                         <input type="password" name="pwd_confirmation" class="form-control" value="">
                     </div>
-                </div>
+                </div>  --}}
 
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">

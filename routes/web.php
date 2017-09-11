@@ -41,6 +41,7 @@ Route::group(['namespace'=>'bc' ,'prefix' => 'bc','middleware'=>'auth'], functio
     Route::post('user/update','UserControl@update')->name('user.update');
     Route::get('user/delete/{id}','UserControl@delete')->name('user.delete');
     
-
+    Route::resource('role', 'RoleControl');
+    Route::resource('permission', 'PermissionControl');
     
 });

@@ -1,10 +1,10 @@
 .navbar-default {
-    background-color: #cb3e3e66;
-    border-color: #e05c65e6;
+    background-color: rgba(203, 0, 0, 0.65);
+    border-color: rgba(250, 89, 89, 0.65);
 }
 .nav .navbar-nav{
-    background-color: #cb3e3e66;
-    border-color: #e05c65e6;
+    background-color: rgba(203, 0, 0, 0.65);
+    border-color: rgba(250, 89, 89, 0.65);
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
       /*border-color: #e46f6b;
@@ -38,10 +38,9 @@
     background-color: #FF8282;
 }
 .dropdown-menu {
+    background-color: rgba(203, 0, 0, 0.65);
 
-    background-color: #e05c65e6;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(255, 104, 104, 0.66);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 
 }
@@ -54,10 +53,10 @@
 }
 .list-group-item-info {
     color: #fafbfc;
-    background-color: #ff0b0b80;
+    background-color: rgba(203, 0, 0, 0.65);;
 }
 .list-group-item {
-    border: 1px solid #e05c65e6;
+    border: 1px solid rgba(250, 89, 89, 0.65);
 }
 .k_ibox{
     display: inline-block;
