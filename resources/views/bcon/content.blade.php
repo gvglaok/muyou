@@ -75,6 +75,8 @@
 					<span class="text-info pull-right">关键词：tag1,tag1,tag1,</span>
 					<a href="">文章标题</a> 
 				</li>
+
+				@foreach($contents as $item)
 				<li href="#" class="list-group-item">
 					<span class="pull-right">
 						<a class="text-success" href="#"><i class="fa fa-eye"></i>查看</a>
@@ -84,9 +86,12 @@
 
 					<span class="badge">点击数：5</span>
 					
-					<span class="text-info pull-right">关键词：tag1,tag1,tag1,</span>
-					<a href="">文章标题</a> 
+					<span class="text-info pull-right">关键词：
+						tag1,tag1,tag1
+					</span>
+					<a href="{{ route('artical.show',['id'=>$item->id])}}">{{ $item->title }}</a> 
 				</li>
+				@endforeach
 			</ul>
 
 		</div>
@@ -94,7 +99,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<nav aria-label="Page navigation">
+			{{--  <nav aria-label="Page navigation">
 			  <ul class="pagination">
 				<li>
 				  <a href="#" aria-label="Previous">
@@ -112,7 +117,8 @@
 				  </a>
 				</li>
 			  </ul>
-			</nav>
+			</nav>  --}}
+			{{ $contents->links() }}
 		</div>
 	</div>
 	

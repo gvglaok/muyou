@@ -31,14 +31,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="input" class="col-sm-2 control-label">角色</label>
+                    <label for="input" class="col-sm-2 control-label">角色
+                    @role('superadmin')
+                               adminx
+                               @endrole
+                    </label>
                     <div class="col-sm-10">
                        
                        @foreach($roles as $item)
                        <span class="checkbox">
                            <label>
                                <input type="checkbox" name="role[]" value="{{$item -> id}}"
-                               checked
+                               @if(in_array($item->id,$urid))
+                                   checked
+                               @endif
                                >
                                {{$item -> name}}
                            </label>
