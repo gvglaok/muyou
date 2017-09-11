@@ -27,10 +27,27 @@
                 <div class="form-group">
                     <label for="input" class="col-sm-2 control-label">个人封面</label>
                     <div class="col-sm-10">
-                        <input type="file" name="myimg" accept="image/gif,image/jpeg,image/jpg,image/png" class="form-control" value="">
+                        <input type="file" name="myimg" accept="image/gif,image/jpeg,image/jpg,image/png" value="">
                     </div>
-                </div>修改密码
-                {{--  <div class="form-group">
+                </div>
+                <div class="form-group">
+                    <label for="input" class="col-sm-2 control-label">角色</label>
+                    <div class="col-sm-10">
+                       
+                       @foreach($roles as $item)
+                       <span class="checkbox">
+                           <label>
+                               <input type="checkbox" name="role[]" value="{{$item -> id}}"
+                               checked
+                               >
+                               {{$item -> name}}
+                           </label>
+                       </span>
+                        @endforeach
+                       
+                    </div>
+                </div>
+                {{-- 修改密码<div class="form-group">
                     <label for="input" class="col-sm-2 control-label">密码</label>
                     <div class="col-sm-10">
                         <input type="password" name="pws" class="form-control" value="">

@@ -8,8 +8,8 @@
 				<i class="fa fa-plus-circle"></i>
 				添加角色
 			</a>
-			<a href=" ">
-				管理角色
+			<a href="{{route('permission.index')}}">
+				管理权限
 			</a>
 		</div>
 	</div>
@@ -37,9 +37,13 @@
 					<a href="{{ route('role.update',['id'=>$item->id]) }}" class="btn btn-secondary btn-sm btn-icon icon-left">
 					修改
 					</a> 
-					<a href="{{ route('role.destroy',['id'=>$item->id]) }}" class="btn btn-danger btn-sm btn-icon icon-left">
+					<form action="{{ route('role.destroy',['id'=>$item->id]) }}" method="post" style="display:inline">
+					{{ csrf_field() }}
+					{{method_field('DELETE')}}
+					<button type="submit" class="btn btn-danger btn-sm btn-icon icon-left">
 					删除
-					</a>
+					</button>
+					</form>
 				</td>
 			</tr>
 			@endforeach

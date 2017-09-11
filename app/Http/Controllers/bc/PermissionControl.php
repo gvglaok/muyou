@@ -4,6 +4,8 @@ namespace App\Http\Controllers\bc;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
+use App\Models\Permission;
 
 class PermissionControl extends Controller
 {
@@ -20,7 +22,9 @@ class PermissionControl extends Controller
      */
     public function index()
     {
-        //
+        
+       return view('bcon.permission', ['perms'=>Permission::all()]);
+        
     }
 
     /**
@@ -41,11 +45,16 @@ class PermissionControl extends Controller
      */
     public function store(Request $request)
     {
-        $createPost = new Permission();
-        $createPost->name         = $request -> name;
-        $createPost->display_name = $request -> dname; // optional
-        $createPost->description  = $request -> description; // optional
-        $createPost->save();
+        Validator::make($request->all(),[
+            'name' => 'required|string|max:100',
+            'dname' => 'max:100',
+            'description' => 'max:255',
+        ]);
+        $perm  = new Permission();
+        $perm -> name         = $request -> name;
+        $perm -> display_name = $request -> dname; // optional
+        $perm -> description  = $request -> description; // optional
+        $perm -> save();
         return redirect()->back();
         
     }
@@ -81,7 +90,17 @@ class PermissionControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Validator::make($request->all(),[
+            'name' => 'required|string|max:100',
+            'dname' => 'max:100',
+            'description' => 'max:255',
+        ]);
+        $perm = Permission::find($id);
+        $perm->name         = $request -> name;
+        $perm->display_name = $request -> dname; // optional
+        $perm->description  = $request -> description; // optional
+        $perm->save();
+        return redirect()->back();
     }
 
     /**
@@ -92,6 +111,7 @@ class PermissionControl extends Controller
      */
     public function destroy($id)
     {
-        //
+        $prem = Permission::find($id)->delete();
+        return redirect()->back();
     }
 }

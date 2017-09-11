@@ -242,14 +242,10 @@
 								</a>
 							</li>
 							<li class="last">
-								<a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    退出
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
                                     {{ csrf_field() }}
+									
+                                    <button type="submit">退出</button>
                                 </form>
 							</li>
 						</ul>

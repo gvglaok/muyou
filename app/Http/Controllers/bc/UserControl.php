@@ -11,6 +11,7 @@ use Image;
 use Storage;
 use Auth;
 use Hash;
+use App\Models\Role;
 
 class UserControl extends Controller
 {
@@ -45,6 +46,7 @@ class UserControl extends Controller
             'name' => 'required|string|max:50',
             'email' => 'required|string|email|max:100|unique:users',
             'pwd' => 'required|string|min:6|confirmed',
+            'role' => 'required|numeric',
             'myimg' => 'image'
         ]);
         
@@ -68,7 +70,8 @@ class UserControl extends Controller
     public function userEdit($id=0)
     {
         $user = User::find($id);
-        return view('bcon.userEdit',['user'=>$user]);
+        $roles = Role::all();
+        return view('bcon.userEdit',['user'=>$user,'roles'=>$roles]);
     }
 
     public function update(Request $request)
@@ -78,11 +81,14 @@ class UserControl extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'pwd' => 'string|min:6|confirmed',
+            'role' => 'required|numeric',
             'myimg' => 'image'
         ]);
         $uid = $request->uid;
         
         $user = User::find($uid);
+        
+        $user ->attachRole($request->role);
 
         if(isset($request->myimg))
         {
@@ -112,6 +118,7 @@ class UserControl extends Controller
         } else {
             $user->save();
         }
+        //echo "<pre>";
         return redirect()->back();
     }
 

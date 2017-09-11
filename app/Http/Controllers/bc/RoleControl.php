@@ -58,7 +58,7 @@ class RoleControl extends Controller
         $owner->display_name = $request->dname;  
         $owner->description  = $request->description;
         $owner->save();
-        
+
         return redirect()->back();
     }
 
@@ -93,7 +93,19 @@ class RoleControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         Validator::make($request->all(),[
+            'name' => 'required|string|max:100',
+            'dname' => 'max:100',
+            'description' => 'max:255',
+        ]);
+        
+        $owner = Role::find($id);
+        $owner->name         = $request->name;
+        $owner->display_name = $request->dname;  
+        $owner->description  = $request->description;
+        $owner->save();
+        
+        return redirect()->back();
     }
 
     /**
@@ -104,6 +116,7 @@ class RoleControl extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = Role::whereId($id)->delete();
+        return redirect()->back();
     }
 }

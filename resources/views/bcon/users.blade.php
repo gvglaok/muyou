@@ -9,7 +9,7 @@
 				<i class="fa fa-plus-circle"></i>
 				添加用户
 			</a>
-			<a href=" ">
+			<a href="{{route('role.index')}}">
 				管理角色
 			</a>
 		</div>
